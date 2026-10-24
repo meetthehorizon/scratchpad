@@ -1,0 +1,15 @@
+[env]
+PORT = "9000"
+
+[tools]
+go = "1.27.2"
+"go:golang.org/x/tools/cmd/goimports" = "0.52.0" # Go formatter (imports)
+"golangci-lint" = "2.15.0"                       # Go linter
+
+[tasks.server]
+description = "Run the TCP server"
+run = "go run ./cmd/server"
+
+[tasks.client]
+description = "Run the TCP client (connects to $ADDR, sends $MSG)"
+run = "go run ./cmd/client"
